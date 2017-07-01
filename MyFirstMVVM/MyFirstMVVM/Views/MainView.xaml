@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyFirstMVVM.Views.MainView">
+    <StackLayout VerticalOptions="Center" 
+         HorizontalOptions="Center" >
+         <Entry Text="{Binding Message, Mode=TwoWay}"></Entry>
+         <Label Text="{Binding Message}"></Label>
+         <Button Text="Add One" Command="{Binding AddOneToCounter}"/>
+        <Label Text="{Binding Result}"></Label>
+    </StackLayout>
+</ContentPage>
+
