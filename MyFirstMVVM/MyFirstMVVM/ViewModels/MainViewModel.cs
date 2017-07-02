@@ -1,4 +1,5 @@
 ﻿using System.Windows.Input;
+using MyFirstMVVM.Services;
 using MyFirstMVVM.ViewModels.Base;
 
 namespace MyFirstMVVM.ViewModels
@@ -7,9 +8,11 @@ namespace MyFirstMVVM.ViewModels
     {
         private string _message;
         private int _clicCounter;
+        readonly INavigationService _navigationService;
 
-        public MainViewModel()
+        public MainViewModel(INavigationService navigationService)
         {
+            _navigationService = navigationService;
             Message = "Hi! MookieFumi. Miguel A. Martín";
         }
 
@@ -31,15 +34,27 @@ namespace MyFirstMVVM.ViewModels
             }
         }
 
+        private ICommand _addOneToCounter;
         public ICommand AddOneToCounter
         {
-            get { return new DelegateCommand(AddOneToCounterExecute, () => { return true; }); }
+            get { return _addOneToCounter = _addOneToCounter ?? new DelegateCommand(AddOneToCounterExecute, () => { return true; }); }
         }
 
         private void AddOneToCounterExecute()
         {
             _clicCounter++;
             RaisePropertyChanged(nameof(Result));
+        }
+
+        private ICommand _goToBeers;
+        public ICommand GoToBeers
+        {
+            get { return _goToBeers = _goToBeers ?? new DelegateCommand(GoToBeersExecute, () => { return true; }); }
+        }
+
+        public void GoToBeersExecute()
+        {
+            _navigationService.NavigateTo<BeersViewModel>();
         }
     }
 }

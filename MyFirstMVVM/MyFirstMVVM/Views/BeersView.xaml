@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="MyFirstMVVM.Views.BeersView"
+    xmlns:local="clr-namespace:MyFirstMVVM.ViewModels.Base;assembly=MyFirstMVVM"
+    BindingContext="{x:Static local:ViewModelLocator.BeersViewModel}">
+	<ContentPage.Content>
+    <StackLayout Orientation="Vertical" Spacing="0">
+        <SearchBar x:Name="SearchBar" 
+                 Placeholder="Search a beer" 
+                 SearchCommand="{Binding SearchBeer}" 
+                 SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}" 
+                 TextChanged="SearchBar_OnTextChanged"/>
+        <ListView ItemsSource="{Binding Beers}">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ImageCell ImageSource="{Binding Image}"
+                           Text="{Binding Type}"
+                           Detail="{Binding Name}">
+                        </ImageCell>
+              </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

@@ -9,7 +9,8 @@
          <Entry Text="{Binding Message, Mode=TwoWay}"></Entry>
          <Label Text="{Binding Message}"></Label>
          <Button Text="Add One" Command="{Binding AddOneToCounter}"/>
-        <Label Text="{Binding Result}"></Label>
+         <Label Text="{Binding Result}"></Label>
+         <Button Text="Go to Beers" Command="{Binding GoToBeers}"/>
     </StackLayout>
 </ContentPage>
 
