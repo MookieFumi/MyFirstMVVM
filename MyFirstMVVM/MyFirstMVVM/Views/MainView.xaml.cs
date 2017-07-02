@@ -7,8 +7,6 @@ namespace MyFirstMVVM.Views
         public MainView()
         {
             InitializeComponent();
-
-            BindingContext = App.Locator.MainViewModel;
         }
     }
 }

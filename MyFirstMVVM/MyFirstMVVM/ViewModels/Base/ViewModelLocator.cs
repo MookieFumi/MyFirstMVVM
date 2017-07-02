@@ -2,21 +2,18 @@
 
 namespace MyFirstMVVM.ViewModels.Base
 {
-    public class ViewModelLocator
+    public static class ViewModelLocator
     {
-        readonly IUnityContainer _container;
+        readonly static IUnityContainer _container;
 
-        public ViewModelLocator()
+        static ViewModelLocator()
         {
             _container = new UnityContainer();
 
-            // ViewModels
+            // Register ViewModels
             _container.RegisterType<MainViewModel>();
         }
 
-        public MainViewModel MainViewModel
-        {
-            get { return _container.Resolve<MainViewModel>(); }
-        }
+        public static MainViewModel MainViewModel => _container.Resolve<MainViewModel>();
     }
 }

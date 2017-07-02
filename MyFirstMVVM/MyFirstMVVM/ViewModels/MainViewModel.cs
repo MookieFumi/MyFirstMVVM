@@ -6,7 +6,6 @@ namespace MyFirstMVVM.ViewModels
     public class MainViewModel : ViewModelBase
     {
         private string _message;
-        private DelegateCommand _helloCommand;
         private int _clicCounter;
 
         public MainViewModel()
@@ -34,7 +33,7 @@ namespace MyFirstMVVM.ViewModels
 
         public ICommand AddOneToCounter
         {
-            get { return _helloCommand = _helloCommand ?? new DelegateCommand(AddOneToCounterExecute, () => { return true; }); }
+            get { return new DelegateCommand(AddOneToCounterExecute, () => { return true; }); }
         }
 
         private void AddOneToCounterExecute()

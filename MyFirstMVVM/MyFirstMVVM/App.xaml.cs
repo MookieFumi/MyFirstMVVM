@@ -1,18 +1,10 @@
-﻿using MyFirstMVVM.ViewModels.Base;
-using MyFirstMVVM.Views;
+﻿using MyFirstMVVM.Views;
 using Xamarin.Forms;
 
 namespace MyFirstMVVM
 {
     public partial class App : Application
     {
-        private static ViewModelLocator _locator;
-
-        public static ViewModelLocator Locator
-        {
-            get { return _locator = _locator ?? new ViewModelLocator(); }
-        }
-
         public App()
         {
             MainPage = new MainView();
