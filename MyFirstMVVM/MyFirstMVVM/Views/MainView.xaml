@@ -4,13 +4,13 @@
              x:Class="MyFirstMVVM.Views.MainView"
              xmlns:local="clr-namespace:MyFirstMVVM.ViewModels.Base;assembly=MyFirstMVVM"
              BindingContext="{x:Static local:ViewModelLocator.MainViewModel}">
-    <StackLayout VerticalOptions="Center" 
-         HorizontalOptions="Center" >
-         <Entry Text="{Binding Message, Mode=TwoWay}"></Entry>
-         <Label Text="{Binding Message}"></Label>
-         <Button Text="Add One" Command="{Binding AddOneToCounter}"/>
-         <Label Text="{Binding Result}"></Label>
-         <Button Text="Go to Beers" Command="{Binding GoToBeers}"/>
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Entry Text="{Binding Message, Mode=TwoWay}"></Entry>
+        <Label Text="{Binding Message}"></Label>
+        <Button Text="Add One" Command="{Binding AddOneToCounter}"/>
+        <Label Text="{Binding Result}"></Label>
+        <Button Text="Go to Beers" Command="{Binding GoToBeers}"/>
+        <Button Text="Go to Breweries" Command="{Binding GoToBreweries}"/>
     </StackLayout>
 </ContentPage>
 

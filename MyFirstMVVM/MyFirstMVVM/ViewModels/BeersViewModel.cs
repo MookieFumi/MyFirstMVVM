@@ -22,7 +22,7 @@ namespace MyFirstMVVM.ViewModels
             }
         }
 
-        public BeersViewModel(object param = null)
+        public BeersViewModel()
         {
             Beers = GetBeers();
         }
@@ -39,7 +39,6 @@ namespace MyFirstMVVM.ViewModels
                  Beers = GetBeers(filter);
              }
          });
-
 
         public ObservableCollection<Beer> GetBeers(string filter = "")
         {

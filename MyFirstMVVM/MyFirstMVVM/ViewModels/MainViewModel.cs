@@ -7,7 +7,7 @@ namespace MyFirstMVVM.ViewModels
     public class MainViewModel : ViewModelBase
     {
         private string _message;
-        private int _clicCounter;
+        private int _clickCounter;
         readonly INavigationService _navigationService;
 
         public MainViewModel(INavigationService navigationService)
@@ -30,7 +30,7 @@ namespace MyFirstMVVM.ViewModels
         {
             get
             {
-                return $"Botón pulsado {_clicCounter} veces";
+                return $"Botón pulsado {_clickCounter} veces";
             }
         }
 
@@ -42,7 +42,7 @@ namespace MyFirstMVVM.ViewModels
 
         private void AddOneToCounterExecute()
         {
-            _clicCounter++;
+            _clickCounter++;
             RaisePropertyChanged(nameof(Result));
         }
 
@@ -55,6 +55,17 @@ namespace MyFirstMVVM.ViewModels
         public void GoToBeersExecute()
         {
             _navigationService.NavigateTo<BeersViewModel>();
+        }
+
+        private ICommand _goToBreweries;
+        public ICommand GoToBreweries
+        {
+            get { return _goToBreweries = _goToBreweries ?? new DelegateCommand(GoToBreweriesExecute, () => { return true; }); }
+        }
+
+        public void GoToBreweriesExecute()
+        {
+            _navigationService.NavigateTo<BreweriesViewModel>();
         }
     }
 }

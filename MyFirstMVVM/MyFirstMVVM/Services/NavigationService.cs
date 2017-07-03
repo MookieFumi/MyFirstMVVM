@@ -10,8 +10,18 @@ namespace MyFirstMVVM.Services
     {
         private IDictionary<Type, Type> viewModelRouting = new Dictionary<Type, Type>()
         {
-            { typeof(MainViewModel), typeof(MainView) },
-            { typeof(BeersViewModel), typeof(BeersView) }
+            {
+                typeof(MainViewModel),
+                typeof(MainView)
+            },
+            {
+                typeof(BeersViewModel),
+                typeof(BeersView)
+            },
+            {
+                typeof(BreweriesViewModel),
+                typeof(BreweriesView)
+            }
         };
 
         public void NavigateTo<TViewModel>()
