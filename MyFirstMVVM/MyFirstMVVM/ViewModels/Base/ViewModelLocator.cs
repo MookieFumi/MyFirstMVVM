@@ -12,7 +12,7 @@ namespace MyFirstMVVM.ViewModels.Base
             _container = new UnityContainer();
 
             // Register ViewModels
-            _container.RegisterType<MainViewModel>();
+            _container.RegisterType<FirstViewModel>();
             _container.RegisterType<BeersViewModel>();
             _container.RegisterType<BreweriesViewModel>();
 
@@ -21,7 +21,7 @@ namespace MyFirstMVVM.ViewModels.Base
             _container.RegisterType<IBreweriesService, BreweriesService>();
         }
 
-        public static MainViewModel MainViewModel => _container.Resolve<MainViewModel>();
+        public static FirstViewModel MainViewModel => _container.Resolve<FirstViewModel>();
         public static BeersViewModel BeersViewModel => _container.Resolve<BeersViewModel>();
         public static BreweriesViewModel BreweriesViewModel => _container.Resolve<BreweriesViewModel>();
     }

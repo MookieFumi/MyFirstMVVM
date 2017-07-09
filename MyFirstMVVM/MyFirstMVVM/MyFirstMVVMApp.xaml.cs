@@ -3,11 +3,11 @@ using Xamarin.Forms;
 
 namespace MyFirstMVVM
 {
-    public partial class App : Application
+    public partial class MyFirstMVVMApp : Application
     {
-        public App()
+        public MyFirstMVVMApp()
         {
-            MainPage = new NavigationPage(new MainView());
+            MainPage = new NavigationPage(new FirstView());
         }
 
         protected override void OnStart()

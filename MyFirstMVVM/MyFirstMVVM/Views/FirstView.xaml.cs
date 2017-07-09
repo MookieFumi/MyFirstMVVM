@@ -2,9 +2,9 @@
 
 namespace MyFirstMVVM.Views
 {
-    public partial class MainView : ContentPage
+    public partial class FirstView : ContentPage
     {
-        public MainView()
+        public FirstView()
         {
             InitializeComponent();
         }

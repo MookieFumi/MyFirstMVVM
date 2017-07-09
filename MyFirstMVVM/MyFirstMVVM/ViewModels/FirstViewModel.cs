@@ -4,13 +4,13 @@ using MyFirstMVVM.ViewModels.Base;
 
 namespace MyFirstMVVM.ViewModels
 {
-    public class MainViewModel : ViewModelBase
+    public class FirstViewModel : ViewModelBase
     {
         private string _message;
         private int _clickCounter;
         readonly INavigationService _navigationService;
 
-        public MainViewModel(INavigationService navigationService)
+        public FirstViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
             Message = "Hi! MookieFumi. Miguel A. Martín";
